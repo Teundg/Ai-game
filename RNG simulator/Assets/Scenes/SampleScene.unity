@@ -1090,7 +1090,7 @@ MonoBehaviour:
   - minionName: KingBob
     dropChance: 1
     rarity: 3
-    image: {fileID: -1761235990, guid: fa20d271d0740f94f9fc80507031cb96, type: 3}
+    image: {fileID: -1115261413, guid: bbe880140efabd14a90fea3f154d333e, type: 3}
 --- !u!4 &1275297121
 Transform:
   m_ObjectHideFlags: 0
