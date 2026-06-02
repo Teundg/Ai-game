@@ -9,6 +9,8 @@ public class Minion
     public Rarity rarity;
 
     public Sprite image;
+
+    public string id;
 }
 
 public enum Rarity
