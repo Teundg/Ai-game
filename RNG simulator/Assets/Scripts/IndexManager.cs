@@ -9,6 +9,7 @@ public class IndexManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("INDEX MANAGER AWAKE");
         Instance = this;
     }
 

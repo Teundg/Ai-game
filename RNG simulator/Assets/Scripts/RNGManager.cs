@@ -5,7 +5,10 @@ public class RNGManager : MonoBehaviour
 {
     public MinionDatabase database;
 
-  
+    void Start()
+    {
+        Debug.Log("IndexManager Instance at start: " + IndexManager.Instance);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -18,13 +21,15 @@ public class RNGManager : MonoBehaviour
     {
         Minion rolledMinion = GetRandomMinion();
 
-      
+        Debug.Log("Got minion");
 
-        // Show popup
+        Debug.Log(IndexManager.Instance);
+
+        Debug.Log(PopupUI.Instance);
+
+        IndexManager.Instance.Discover(rolledMinion);
+
         PopupUI.Instance.ShowMinion(rolledMinion);
-
-        // Refresh index UI
-     
 
         Debug.Log("Rolled: " + rolledMinion.minionName);
     }
