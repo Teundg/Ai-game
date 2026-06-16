@@ -15,5 +15,5 @@ Part 2 of chat
 
 https://chatgpt.com/share/6a2816be-94cc-83eb-aeaa-58629ac1a17d
 
-[refelectie.odt](https://github.com/user-attachments/files/28999989/refelectie.odt)
+
 
