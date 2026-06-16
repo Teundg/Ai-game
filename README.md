@@ -14,3 +14,6 @@ https://chatgpt.com/share/6a15a375-f788-83eb-9ee9-aa3427c84405
 Part 2 of chat
 
 https://chatgpt.com/share/6a2816be-94cc-83eb-aeaa-58629ac1a17d
+
+
+
