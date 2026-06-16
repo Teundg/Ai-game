@@ -4,11 +4,8 @@ using UnityEngine;
 public class RNGManager : MonoBehaviour
 {
     public MinionDatabase database;
+    public IndexUI indexUI;
 
-    void Start()
-    {
-        Debug.Log("IndexManager Instance at start: " + IndexManager.Instance);
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -21,15 +18,14 @@ public class RNGManager : MonoBehaviour
     {
         Minion rolledMinion = GetRandomMinion();
 
-        Debug.Log("Got minion");
-
-        Debug.Log(IndexManager.Instance);
-
-        Debug.Log(PopupUI.Instance);
-
         IndexManager.Instance.Discover(rolledMinion);
 
         PopupUI.Instance.ShowMinion(rolledMinion);
+
+        if (indexUI != null)
+        {
+            indexUI.Refresh();
+        }
 
         Debug.Log("Rolled: " + rolledMinion.minionName);
     }
@@ -43,7 +39,6 @@ public class RNGManager : MonoBehaviour
             total += m.dropChance;
         }
 
-        // FIXED: UnityEngine.Random (no ambiguity)
         float randomValue = UnityEngine.Random.Range(0f, total);
 
         foreach (Minion m in database.allMinions)

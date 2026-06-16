@@ -9,25 +9,30 @@ public class IndexManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("INDEX MANAGER AWAKE");
         Instance = this;
     }
 
-    public void Discover(Minion minion)
+    // STEP 1: Call this when player gets a minion
+    public void Discover(Minion m)
     {
-        if (!discovered.Contains(minion.id))
-        {
-            discovered.Add(minion.id);
-        }
+        if (m == null) return;
+
+        discovered.Add(m.minionName);
     }
 
-    public bool IsDiscovered(Minion minion)
+    // Used by UI to check if minion is unlocked
+    public bool IsDiscovered(Minion m)
     {
-        return discovered.Contains(minion.id);
+        if (m == null) return false;
+
+        return discovered.Contains(m.minionName);
     }
 
-    public int GetCompletion(int total)
+    // STEP 1 (your missing function) — completion %
+    public float GetCompletion(int totalMinions)
     {
-        return (int)((discovered.Count / (float)total) * 100f);
+        if (totalMinions == 0) return 0f;
+
+        return (float)discovered.Count / totalMinions * 100f;
     }
 }

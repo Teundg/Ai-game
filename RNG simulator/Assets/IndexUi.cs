@@ -17,26 +17,19 @@ public class IndexUi : MonoBehaviour
 
     public void Refresh()
     {
-        if (indexText == null || completionText == null || database == null)
-        {
-            Debug.LogError("IndexUi: Missing references!");
-            return;
-        }
-
-        if (IndexManager.Instance == null)
-        {
-            Debug.LogError("IndexUi: IndexManager instance not found!");
-            return;
-        }
-
+        Debug.Log("INDEX REFRESHED");
         indexText.text = "";
 
         foreach (Minion m in database.allMinions)
         {
-            indexText.text += "TEST ???\n";
+            if (IndexManager.Instance.IsDiscovered(m))
+            {
+                indexText.text += m.minionName + " (" + m.rarity + ")\n";
+            }
+            else
+            {
+                indexText.text += "???\n";
+            }
         }
-
-        completionText.text =
-            $"Completion: {IndexManager.Instance.discovered.Count}/{database.allMinions.Count}";
     }
 }
